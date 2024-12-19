@@ -1,21 +1,26 @@
+using CoreFoody.BusinessLayer.Abstract;
+using CoreFoody.BusinessLayer.Concrete;
+using CoreFoody.DataAccessLayer.Abstract;
+using CoreFoody.DataAccessLayer.Context;
+using CoreFoody.DataAccessLayer.EntityFramework;
+
 namespace CoreFoody.WebUI
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
+            WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<FoodyDbContext>();
+            builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+            builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
-            var app = builder.Build();
+            WebApplication app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -28,7 +33,7 @@ namespace CoreFoody.WebUI
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Categories}/{action=Index}/{id?}");
 
             app.Run();
         }
