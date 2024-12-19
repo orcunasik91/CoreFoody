@@ -10,4 +10,9 @@
     <ProjectReference Include="..\CoreFoody.DataAccessLayer\CoreFoody.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logging\" />
+    <Folder Include="ValidationRules\" />
+  </ItemGroup>
+
 </Project>
