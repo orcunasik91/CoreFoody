@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35605.110
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreFoody.EntityLayer", "CoreFoody.EntityLayer\CoreFoody.EntityLayer.csproj", "{C5506B7A-7908-48E4-9716-8FC0DD4F24FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreFoody.DataAccessLayer", "CoreFoody.DataAccessLayer\CoreFoody.DataAccessLayer.csproj", "{3B7BD84E-7959-4B9C-A923-3250D123B3AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C5506B7A-7908-48E4-9716-8FC0DD4F24FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5506B7A-7908-48E4-9716-8FC0DD4F24FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5506B7A-7908-48E4-9716-8FC0DD4F24FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7BD84E-7959-4B9C-A923-3250D123B3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7BD84E-7959-4B9C-A923-3250D123B3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7BD84E-7959-4B9C-A923-3250D123B3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7BD84E-7959-4B9C-A923-3250D123B3AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
