@@ -1,0 +1,31 @@
+﻿@{ Layout = null;}
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_HeadLayoutComponentPartial") 
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        @await Component.InvokeAsync("_SidebarLayoutComponentPartial")
+        <!-- End Sidebar -->
+
+        @await Component.InvokeAsync("_MainPanelLayoutComponentPartial")
+
+        <div class="container">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @await Component.InvokeAsync("_FooterLayoutComponentPartial") 
+    </div>
+   @await Component.InvokeAsync("_JSLayoutComponentPartial") 
+</body>
+</html>
