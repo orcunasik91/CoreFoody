@@ -1,0 +1,33 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Kategoriler";
+}
+<div class="card-header">
+    <h4 class="card-title">Kategoriler</h4>
+</div>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Kategori</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+            foreach (Category category in Model)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@category.CategoryName</td>
+                    <td><a class="btn btn-outline-warning" asp-controller="Categories" asp-action="UpdateCategory">Düzenle</a></td>
+                    <td><a class="btn btn-outline-danger" asp-controller="Categories" asp-action="RemoveCategory">Sil</a></td>
+                </tr>
+                i++;
+            }
+        }
+    </tbody>
+</table>
+<span><a class="btn btn-outline-primary" asp-controller="Category" asp-action="AddCategory">Yeni Kategori</a></span>
