@@ -1,0 +1,49 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Yeni Ürün";
+}
+<div class="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Yeni Kategori</h4>
+                    <span><a class="btn btn-back-home text-bg-light" asp-controller="Products" asp-action="ProductListWithCategory">Geri Dön</a></span>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group col-sm-4">
+                            <label asp-for="ProductName" class="text-black">Ürün:</label>
+                            <input type="text" asp-for="ProductName" class="form-control" autofocus />
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label asp-for="CategoryId" class="text-black">Kategori:</label>
+                            <select class="form-select" asp-for="CategoryId" asp-items="ViewBag.CategorList">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label asp-for="Stock" class="text-black">Stok:</label>
+                            <input type="number" asp-for="Stock" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label asp-for="Price" class="text-black">Fiyat:</label>
+                            <input type="text" asp-for="Price" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label asp-for="Description" class="text-black">Açıklama:</label>
+                            <textarea asp-for="Description" class="form-control" style="width:470px;"></textarea>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label asp-for="ImageUrl" class="text-black">Ürün Görseli:</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
