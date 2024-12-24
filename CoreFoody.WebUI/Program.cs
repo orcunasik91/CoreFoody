@@ -15,6 +15,8 @@ namespace CoreFoody.WebUI
             builder.Services.AddDbContext<FoodyDbContext>();
             builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
             builder.Services.AddScoped<ICategoryService, CategoryManager>();
+            builder.Services.AddScoped<IProductDal, EfProductDal>();
+            builder.Services.AddScoped<IProductService, ProductManager>();
 
             WebApplication app = builder.Build();
 
