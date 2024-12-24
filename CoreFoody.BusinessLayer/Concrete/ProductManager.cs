@@ -32,6 +32,11 @@ public class ProductManager : IProductService
         _productDal.Insert(entity);
     }
 
+    public List<Product> ProductsWithCategory()
+    {
+        return _productDal.ProductListWithCategory();
+    }
+
     public void Update(Product entity)
     {
         _productDal.Update(entity);
