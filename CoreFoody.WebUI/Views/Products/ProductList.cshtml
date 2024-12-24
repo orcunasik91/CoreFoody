@@ -1,0 +1,47 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Ürünler";
+}
+<div class="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Ürünler</h4>
+                    <span><a class="btn btn-primary" asp-controller="Products" asp-action="CreateProduct">Yeni Ürün</a></span>
+                </div>
+                <div class="card-body">
+                    <table class="table mt-3">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Ürün</th>
+                                <th>Stok</th>
+                                <th>Fiyat</th>
+                                <th>Düzenle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 1;
+                                foreach (Product product in Model)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>@product.ProductName</td>
+                                        <td>@product.Stock</td>
+                                        <td>@product.Price.ToString("C")</td>
+                                        <td><a class="btn btn-outline-warning" asp-controller="Products" asp-action="UpdateProduct" asp-route-id="@product.ProductId">Düzenle</a></td>
+                                        <td><a class="btn btn-outline-danger" asp-controller="Products" asp-action="RemoveProduct" asp-route-id="@product.ProductId">Kaldır</a></td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
