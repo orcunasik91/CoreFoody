@@ -3,6 +3,7 @@ using CoreFoody.BusinessLayer.Concrete;
 using CoreFoody.DataAccessLayer.Abstract;
 using CoreFoody.DataAccessLayer.Context;
 using CoreFoody.DataAccessLayer.EntityFramework;
+using System.Reflection;
 
 namespace CoreFoody.WebUI
 {
@@ -13,10 +14,13 @@ namespace CoreFoody.WebUI
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<FoodyDbContext>();
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
             builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
             builder.Services.AddScoped<ICategoryService, CategoryManager>();
             builder.Services.AddScoped<IProductDal, EfProductDal>();
             builder.Services.AddScoped<IProductService, ProductManager>();
+            builder.Services.AddScoped<ISliderDal, EfSliderDal>();
+            builder.Services.AddScoped<ISliderService, SliderManager>();
 
             WebApplication app = builder.Build();
 
