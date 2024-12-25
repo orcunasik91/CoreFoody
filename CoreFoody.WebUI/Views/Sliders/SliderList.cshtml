@@ -1,0 +1,43 @@
+﻿@model List<ResultSliderDto>
+@{
+    ViewData["Title"] = "Sliderlar";
+}
+<div class="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Sliderlar</h4>
+                    <span><a class="btn btn-primary" asp-controller="Sliders" asp-action="CreateSlider">Yeni Slider</a></span>
+                </div>
+                <div class="card-body">
+                    <table class="table mt-3">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Başlık</th>
+                                <th>Düzenle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 1;
+                                foreach (ResultSliderDto slider in Model)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>@slider.Title</td>
+                                        <td><a class="btn btn-outline-warning" asp-controller="Sliders" asp-action="UpdateSlider" asp-route-id="@slider.SliderId">Düzenle</a></td>
+                                        <td><a class="btn btn-outline-danger" asp-controller="Sliders" asp-action="RemoveSlider" asp-route-id="@slider.SliderId">Kaldır</a></td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

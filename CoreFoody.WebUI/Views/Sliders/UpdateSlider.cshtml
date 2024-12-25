@@ -1,0 +1,32 @@
+﻿@model UpdateSliderDto
+@{
+    ViewData["Title"] = "Slider Güncelle";
+}
+<div class="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Slider Güncelle</h4>
+                    <span><a class="btn btn-back-home text-bg-light" asp-controller="Sliders" asp-action="SliderList">Geri Dön</a></span>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="SliderId" />
+                        <div class="form-group col-sm-6">
+                            <label asp-for="Title" class="text-black">Başlık:</label>
+                            <input type="text" asp-for="Title" class="form-control" autofocus />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label asp-for="ImageUrl" class="text-black">Görsel:</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
