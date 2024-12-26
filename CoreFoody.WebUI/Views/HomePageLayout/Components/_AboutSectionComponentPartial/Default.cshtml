@@ -1,0 +1,21 @@
+﻿@model List<ResultAboutDto>
+<div class="container-xxl py-5">
+    <div class="container">
+        @foreach (ResultAboutDto about in Model)
+        {
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="~/foody2-1.0.0/img/about.jpg">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-5 mb-4">@about.Title</h1>
+                    <p class="mb-4">@about.Description</p>
+                    @await Component.InvokeAsync("_AboutItemComponentPartial")
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Devamı...</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

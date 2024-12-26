@@ -22,7 +22,9 @@ namespace CoreFoody.WebUI
             builder.Services.AddScoped<ISliderDal, EfSliderDal>();
             builder.Services.AddScoped<ISliderService, SliderManager>();
             builder.Services.AddScoped<IAboutDal, EfAboutDal>();
-            builder.Services.AddScoped<IAboutService, AboutManager>();
+            builder.Services.AddScoped<IAboutService, AboutManager>(); 
+            builder.Services.AddScoped<IAboutItemDal, EfAboutItemDal>();
+            builder.Services.AddScoped<IAboutItemService, AboutItemManager>();
 
             WebApplication app = builder.Build();
 
@@ -35,7 +37,7 @@ namespace CoreFoody.WebUI
             });
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/ErrorPages/ErrorPage404");
                 app.UseHsts();
             }
 
