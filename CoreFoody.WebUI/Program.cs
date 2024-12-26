@@ -26,6 +26,13 @@ namespace CoreFoody.WebUI
 
             WebApplication app = builder.Build();
 
+            app.UseStatusCodePages(async page =>
+            {
+                if(page.HttpContext.Response.StatusCode == 404)
+                {
+                    page.HttpContext.Response.Redirect("/ErrorPages/ErrorPage404");
+                }
+            });
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
