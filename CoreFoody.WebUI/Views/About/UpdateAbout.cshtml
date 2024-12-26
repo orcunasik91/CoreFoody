@@ -1,0 +1,34 @@
+﻿@model UpdateAboutDto
+@{
+    ViewData["Title"] = "Hakkımızda Düzenle";
+}
+<div class="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Hakkımızda Düzenle</h4>
+                    <span><a class="btn btn-back-home text-bg-light" asp-controller="About" asp-action="Index">Geri Dön</a></span>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="AboutId" />
+                        <div class="form-group col-sm-6">
+                            <label asp-for="Title" class="text-black">Başlık:</label>
+                            <input type="text" asp-for="Title" class="form-control" autofocus />
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <label class="input-group-text text-black" asp-for="Description">Açıklama</label>
+                                <textarea class="form-control" aria-label="Açıklama" asp-for="Description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

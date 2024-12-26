@@ -1,0 +1,43 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Hakkımızda";
+}
+<div class="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Hakkımızda</h4>
+                    <span><a class="btn btn-primary" asp-controller="About" asp-action="CreateAbout">Yeni Hakkımızda</a></span>
+                </div>
+                <div class="card-body">
+                    <table class="table mt-3">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Başlık</th>
+                                <th>Düzenle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int i = 1;
+                                foreach (ResultAboutDto about in Model)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>@about.Title</td>
+                                        <td><a class="btn btn-outline-warning" asp-controller="About" asp-action="UpdateAbout" asp-route-id="@about.AboutId">Düzenle</a></td>
+                                        <td><a class="btn btn-outline-danger" asp-controller="About" asp-action="RemoveAbout" asp-route-id="@about.AboutId">Kaldır</a></td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

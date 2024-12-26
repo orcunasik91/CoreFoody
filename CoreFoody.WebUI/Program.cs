@@ -21,6 +21,8 @@ namespace CoreFoody.WebUI
             builder.Services.AddScoped<IProductService, ProductManager>();
             builder.Services.AddScoped<ISliderDal, EfSliderDal>();
             builder.Services.AddScoped<ISliderService, SliderManager>();
+            builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+            builder.Services.AddScoped<IAboutService, AboutManager>();
 
             WebApplication app = builder.Build();
 
