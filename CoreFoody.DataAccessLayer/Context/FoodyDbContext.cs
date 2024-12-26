@@ -11,6 +11,7 @@ public class FoodyDbContext : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<About> Abouts { get; set; }
+    public DbSet<AboutItem> AboutItems { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Feature> Features { get; set; }
     public DbSet<SocialMedia> SocialMedias { get; set; }
