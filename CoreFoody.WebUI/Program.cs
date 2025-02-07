@@ -27,6 +27,8 @@ namespace CoreFoody.WebUI
             builder.Services.AddScoped<IAboutItemService, AboutItemManager>();
             builder.Services.AddScoped<IFeatureDal, EfFeatureDal>();
             builder.Services.AddScoped<IFeatureService, FeatureManager>();
+            builder.Services.AddScoped<IReviewDal, EfReviewDal>();
+            builder.Services.AddScoped<IReviewService, ReviewManager>();
 
             WebApplication app = builder.Build();
 
