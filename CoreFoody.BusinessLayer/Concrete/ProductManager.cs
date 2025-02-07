@@ -37,6 +37,11 @@ public class ProductManager : IProductService
         return _productDal.ProductListWithCategory();
     }
 
+    public List<Product> ProductsWithCategoryAndLast12Items()
+    {
+        return _productDal.ProductListWithCategoryAndLast12Items();
+    }
+
     public void Update(Product entity)
     {
         _productDal.Update(entity);

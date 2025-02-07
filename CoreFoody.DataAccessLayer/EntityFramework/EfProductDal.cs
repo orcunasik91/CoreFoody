@@ -18,4 +18,10 @@ public class EfProductDal : BaseRepository<Product>, IProductDal
         List<Product> products = _context.Products.Include(p => p.Category).ToList();
         return products;
     }
+
+    public List<Product> ProductListWithCategoryAndLast12Items()
+    {
+        List<Product> products = _context.Products.OrderByDescending(p => p.ProductId).Take(12).Include(p => p.Category).ToList();
+        return products;
+    }
 }
