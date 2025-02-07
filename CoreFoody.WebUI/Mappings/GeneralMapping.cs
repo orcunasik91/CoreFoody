@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CoreFoody.DtoLayer.Dtos.AboutDtos;
+using CoreFoody.DtoLayer.Dtos.ReviewDtos;
 using CoreFoody.DtoLayer.Dtos.SliderDtos;
 using CoreFoody.EntityLayer.Concrete;
 
@@ -19,6 +20,9 @@ public class GeneralMapping : Profile
         CreateMap<CreateSliderDto, Slider>().ReverseMap();
         CreateMap<UpdateSliderDto, Slider>().ReverseMap();
         CreateMap<GetSliderDto, Slider>().ReverseMap();
+        #endregion
+        #region ReviewMapping
+        CreateMap<ResultReviewDto, Review>().ReverseMap();
         #endregion
     }
 }
